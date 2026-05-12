@@ -1,7 +1,7 @@
 # Samuraidoku
 
 **Live project:** _paste deployed Vercel link here_  
-**GitHub repository:** _paste GitHub repository link here_
+**GitHub repository:** https://github.com/zoga228/samuraidoku
 
 Samuraidoku is a Japanese-inspired Sudoku platform that turns puzzle solving into a calm samurai-style mental training experience.
 
