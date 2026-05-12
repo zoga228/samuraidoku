@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f3ebdd;
+  --paper-deep: #d8ccba;
+  --ink: #24231f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(223, 166, 166, 0.25), transparent 22rem),
+    radial-gradient(circle at 84% 12%, rgba(184, 184, 176, 0.28), transparent 18rem),
+    linear-gradient(135deg, #f3ebdd 0%, #e6dccb 52%, #d8ccba 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+:root[data-theme="dark"] body {
+  color: #f3ebdd;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(158, 42, 43, 0.18), transparent 24rem),
+    radial-gradient(circle at 84% 12%, rgba(184, 184, 176, 0.1), transparent 18rem),
+    linear-gradient(135deg, #171714 0%, #24231f 55%, #33312c 100%);
+}
+
+:root[data-theme="dark"] body::before {
+  opacity: 0.12;
+  background-image:
+    linear-gradient(90deg, rgba(243, 235, 221, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(243, 235, 221, 0.05) 1px, transparent 1px);
+}
+
+:root[data-theme="dark"] .paper-panel {
+  border-color: rgba(243, 235, 221, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)),
+    rgba(36, 35, 31, 0.82);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme="dark"] .text-ink-900,
+:root[data-theme="dark"] .text-ink-800 {
+  color: #f3ebdd !important;
+}
+
+:root[data-theme="dark"] .text-ink-700 {
+  color: #d6d2c8 !important;
+}
+
+:root[data-theme="dark"] .bg-parchment-50,
+:root[data-theme="dark"] .bg-parchment-100,
+:root[data-theme="dark"] [class*="bg-parchment-50/"],
+:root[data-theme="dark"] [class*="bg-parchment-100/"] {
+  background-color: rgba(51, 49, 44, 0.76) !important;
+}
+
+:root[data-theme="dark"] .border-ink-900\/10,
+:root[data-theme="dark"] .border-ink-900\/12,
+:root[data-theme="dark"] .border-ink-900\/15 {
+  border-color: rgba(243, 235, 221, 0.16) !important;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  content: "";
+  opacity: 0.2;
+  background-image:
+    linear-gradient(90deg, rgba(36, 35, 31, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(36, 35, 31, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px, 18px 18px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+::selection {
+  color: #24231f;
+  background: #dfa6a6;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.paper-panel {
+  border: 1px solid rgba(36, 35, 31, 0.16);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0)),
+    rgba(243, 235, 221, 0.76);
+  box-shadow: 0 20px 60px rgba(36, 35, 31, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.ink-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(36, 35, 31, 0.52), transparent);
+}
+
+.vertical-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px rgba(223, 166, 166, 0.55);
+}
+
+.sudoku-grid-shadow {
+  box-shadow:
+    inset 0 0 0 2px rgba(36, 35, 31, 0.9),
+    0 24px 70px rgba(36, 35, 31, 0.16);
+}
+
+:root[data-skin="black-ink"] body {
+  color: #f3ebdd;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(158, 42, 43, 0.22), transparent 24rem),
+    radial-gradient(circle at 86% 12%, rgba(184, 184, 176, 0.1), transparent 18rem),
+    linear-gradient(135deg, #141411 0%, #24231f 56%, #33312c 100%);
+}
+
+:root[data-skin="black-ink"] header {
+  border-color: rgba(243, 235, 221, 0.12) !important;
+  background: rgba(23, 23, 20, 0.88) !important;
+}
+
+:root[data-skin="black-ink"] .paper-panel {
+  border-color: rgba(243, 235, 221, 0.15);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0)),
+    rgba(36, 35, 31, 0.86);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+}
+
+:root[data-skin="black-ink"] .text-ink-900,
+:root[data-skin="black-ink"] .text-ink-800 {
+  color: #f3ebdd !important;
+}
+
+:root[data-skin="black-ink"] .text-ink-700 {
+  color: #d6d2c8 !important;
+}
+
+:root[data-skin="black-ink"] .bg-parchment-50,
+:root[data-skin="black-ink"] .bg-parchment-100,
+:root[data-skin="black-ink"] [class*="bg-parchment-50/"],
+:root[data-skin="black-ink"] [class*="bg-parchment-100/"] {
+  background-color: rgba(51, 49, 44, 0.76) !important;
+}
+
+:root[data-skin="black-ink"] .sudoku-grid-shadow {
+  background: #1d1c18 !important;
+  box-shadow:
+    inset 0 0 0 2px rgba(243, 235, 221, 0.78),
+    0 28px 80px rgba(0, 0, 0, 0.38);
+}
+
+:root[data-skin="black-ink"] .sudoku-grid-shadow > button {
+  border-color: rgba(243, 235, 221, 0.24) !important;
+  color: #f3ebdd;
+}
+
+:root[data-skin="black-ink"] .sudoku-grid-shadow .text-indigo-950 {
+  color: #e8b7b7 !important;
+}
+
+:root[data-skin="sakura-garden"] body {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(223, 166, 166, 0.36), transparent 22rem),
+    radial-gradient(circle at 88% 18%, rgba(107, 143, 113, 0.14), transparent 18rem),
+    linear-gradient(135deg, #f7f0e6 0%, #e8d3cf 46%, #d8ccba 100%);
+}
+
+:root[data-skin="sakura-garden"] .paper-panel {
+  border-color: rgba(183, 101, 105, 0.22);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0)),
+    rgba(243, 235, 221, 0.8);
+}
+
+:root[data-skin="sakura-garden"] .sudoku-grid-shadow {
+  background: #fbf2ea !important;
+  box-shadow:
+    inset 0 0 0 2px rgba(183, 101, 105, 0.58),
+    0 24px 70px rgba(183, 101, 105, 0.12);
+}
+
+:root[data-skin="katana-steel"] body {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(214, 210, 200, 0.42), transparent 22rem),
+    radial-gradient(circle at 86% 14%, rgba(36, 35, 31, 0.14), transparent 18rem),
+    linear-gradient(135deg, #e8e3d8 0%, #d6d2c8 48%, #b8b8b0 100%);
+}
+
+:root[data-skin="katana-steel"] .paper-panel {
+  border-color: rgba(36, 35, 31, 0.2);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0)),
+    rgba(230, 220, 203, 0.72);
+}
+
+:root[data-skin="katana-steel"] .sudoku-grid-shadow {
+  background: #ece7dc !important;
+  box-shadow:
+    inset 0 0 0 2px rgba(36, 35, 31, 0.95),
+    0 26px 74px rgba(36, 35, 31, 0.18);
+}
